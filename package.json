@@ -1,0 +1,44 @@
+{
+  "name": "@local/auto-compact",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Adds an /auto-compact command that condenses a conversation once its measured context reaches a user-chosen token level (default 500k, range 100k-1M).",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kachchi3739/dsh-auto-compact.git"
+  },
+  "homepage": "https://github.com/Kachchi3739/dsh-auto-compact#readme",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-bundle",
+    "cordis-plugin",
+    "compaction",
+    "context-window"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "policy.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "README_ko.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test --test-isolation=none \"test/**/*.test.mjs\""
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Auto-compact",
+    "description": "Automatically compact a conversation when its measured context reaches the token level you choose."
+  }
+}

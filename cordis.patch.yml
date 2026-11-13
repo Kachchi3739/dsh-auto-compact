@@ -1,0 +1,13 @@
+# Auto-compact bundle: one Host plugin that attaches an agent-scoped
+# `/auto-compact` command to live Agents and watches their idle transitions.
+#
+# The Web surface disables the host-plane compaction backend and mounts it
+# inside each agent preset's isolated `compaction` realm, so a host row cannot
+# inject `compaction`. This plugin therefore resolves each Agent's engine
+# through the documented `ctx.agentPresets.serviceFor(agent, 'compaction')`
+# accessor and keeps its own state file (a host row is not itself addressable
+# by settings when the command runs per agent, and the state must outlive
+# plugin reloads).
+- insert:
+    - id: auto-compact
+      name: '@local/auto-compact'
